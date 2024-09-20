@@ -1,12 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template.response import TemplateResponse
 
 def index(request):
- return HttpResponse("<h2>Главная</h2>")
-def about(request):
- return HttpResponse("<h2>О сайте</h2>")
-def contact(request):
- return HttpResponse("<h2>Контакты</h2>")
+ return render(request, "main\index.html")
 
 def products(request, productid = 1):
  output = "<h2>Продукт № {0}</h2>".format(productid)
