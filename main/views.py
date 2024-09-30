@@ -3,7 +3,8 @@ from django.http import HttpResponse
 from django.template.response import TemplateResponse
 
 def index(request):
- return render(request, "main\index.html")
+ cat = ["Степлер", "Электростеплер", "Stapler"]
+ return render(request, "main/index.html", context={"cat": cat})
 
 def products(request, productid = 1):
  output = "<h2>Продукт № {0}</h2>".format(productid)
